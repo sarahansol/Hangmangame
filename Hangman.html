@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+
+    </head>
+
+     <h1>Hangman</h1>
+       <h2>Hangman Game mady by Sarah Han</h2>
+    
+    <body>
+
+
+    <div id="game">
+    <p>Question: What is Sarah's favorite food? </p>
+    <p> (PRESS any alphabet to guess the word.) </p>
+    </div>
+  
+  <p id="s" > _</p>  
+  <p id="u" > _</p>  
+  <p id="p" > _</p> 
+  <p id="h" > _</p>  
+  <p id="i" > _</p>
+
+  <p>Copyright Sarah Han 2017</p>
+  
+    <script type = "text/javascript">
+
+    function myFunction() {
+    document.getElementById("s").innerHTML = "s";
+}
+
+	function myFunction() {
+    document.getElementById("u").innerHTML = "u";
+}
+	function myFunction() {
+    document.getElementById("p").innerHTML = "s";
+}
+	function myFunction() {
+    document.getElementById("h").innerHTML = "h";
+}
+	function myFunction() {
+    document.getElementById("i").innerHTML = "i";
+}
+      
+      var losses = 0;
+ 
+      // When the user presses a key, it will run the following function...
+      document.onkeyup = function(event) {
+        // Determine which key was pressed
+        var userGuess = event.key;
+        // Sets the computerGuess variable equal to a random choice from the computerChoice array.
+        
+
+        if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") || (userGuess === "y") || (userGuess === "z") ) {
+         
+
+          if ((userGuess === "s") ) {
+             document.getElementById("s").innerHTML = "S";
+               document.getElementById("p").innerHTML = "S";
+          }      
+          else if ((userGuess === "u") ) {
+            document.getElementById("u").innerHTML = "U";
+          }
+          else if ((userGuess === "i") ) {
+            document.getElementById("i").innerHTML = "I";
+          }     
+          else if ((userGuess === "h")) {
+          document.getElementById("h").innerHTML = "H";
+          }
+          else if ((userGuess === "a","b")) {
+          	losses++
+          }
+          
+          // Here we create the HTML that will be injected into our div and displayed on the page.
+          var html = "<p>Question: What is Sarah's favorite food? </p>" + 
+          "<p> (PRESS any alphabet to guess the word.) </p>" +
+          "<p>Wrong guesses: " + losses + "</p>" ;
+
+          document.querySelector("#game").innerHTML = html;
+        }
+      };
+
+    </script>
+
+    </body>
+
+    </html>
+
+
+
